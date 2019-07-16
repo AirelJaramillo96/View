@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Introduccion a VueJs</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ </head>
+ <body>
+     <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h1>Agregar Nota</h1>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>Lista Notas</h1>
+                    <table class="table">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Promedio</th>
+                        </tr>
+                        <tr v-for="item in lista" v-bind:style="item.estado==false? 'color:red' : ''">
+                            <th v-text="item.nombre"></th>
+                            <th v-text="item.promedio"></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>  
+            <div class="row">
+             <div class="col-md-12 col-xs-12"></div>
+             <p class="text-center">
+                 www.icanatoit.com - @jcarlosad7
+             </p>
+
+         </div> 
+        </div>
+     </div>
+ </body>
+     <script src="js/vue.js"></script>
+     <script src="js/principal.js"></script>
+ </html>
