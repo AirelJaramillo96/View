@@ -13,15 +13,26 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <h1>Agregar Nota</h1>
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" v-model="nombre">
+                    <!--toma el valor del input nombre para guardarlo en la js/principal, en app-->
+                    <label>Promedio</label>
+                    <input type="number" max="28" min="0" class="form-control" v-model="promedio"> <!--toma el valor del input
+                    promedio para guardarlo en la js/principal, en app-->
+                    <input type="button" value="Guardar" class="btn btn-success" v-on:click="agregarNota">
+                    <!--El v-on: click, "escucha" el metodo click-->
                 </div>
                 <div class="col-md-6 col-xs-12">
-                    <h1>Lista Notas</h1>
+                    <h1 v-if="lista.length > 0">Lista Notas</h1>
+                    <h1 v-else="lista">No existen notas</h1>
                     <table class="table">
                         <tr>
                             <th>Nombre</th>
                             <th>Promedio</th>
                         </tr>
-                        <tr v-for="item in lista" v-bind:style="item.estado==false? 'color:red' : ''">
+                        <tr v-for="item in lista" v-bind:style="item.estado==false? 'color:red' : ''"> <!--se valida el
+                        estado del promedio, A o NA, lista la jala del metodo principal, y con item.nombre muestra los
+                        valores que se guardaron en la lista en el js principal-->
                             <th v-text="item.nombre"></th>
                             <th v-text="item.promedio"></th>
                         </tr>
